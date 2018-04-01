@@ -11,5 +11,5 @@ docker::run { 'helloworld':
 
 docker::run { 'goodbye':
   image  => 'ubuntu',
-  command => '/bin/sh -c "while, true do eccho; sleep 1; done"'.
+  command => '/bin/sh -c "while, true do eccho; sleep 1; done"',
 }
