@@ -15,6 +15,6 @@ docker::run { 'goodbyeworld':
   command => '/bin/sh -c "while true; do echo go away; sleep 1; done"',
 }
 
-class { 'ntp':
+ntp::install { 'ntp':
   servers => [ 'ntp1.corp.com', 'ntp2.corp.com' ],
 }
