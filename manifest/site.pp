@@ -1,12 +1,9 @@
 node 'master.puppet.vm' {
-  include dockeragent
   include role::master_server
 }
-node /^web/ { 
-  include dockeragent
+node 'web.puppet.vm' { 
   include role::app_server
 }
-node /^db/ {
-  include dockeragent
+node 'db.puppet.vm' {
   include role::db_server
 }
