@@ -9,7 +9,7 @@ docker::run { 'helloworld':
   command => '/bin/sh -c "while true; do echo hello world; sleep 1; done"',
 }
 
-docker::run { 'goodbye':
+docker::run { 'goodbyeworld':
   image  => 'ubuntu',
-  command => '/bin/sh -c "while, true do eccho; sleep 1; done"',
+  command => '/bin/sh -c "while true; do echo go away; sleep 1; done"',
 }
