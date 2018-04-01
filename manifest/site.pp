@@ -5,13 +5,11 @@ docker::image { 'ubuntu':
 }
 
 docker::run { 'helloworld':
-  image   => 'base',
+  image   => 'ubuntu',
   command => '/bin/sh -c "while true; do echo hello world; sleep 1; done"',
 }
 
-docker::exec { 'helloworld-uptime':
-  detach    => true,
-  container => 'helloworld',
-  command   => 'uptime',
-  tty       => true,
+docker::run { 'goodbye':
+  image  => 'ubuntu',
+  command => '/bin/sh -c "while, true do eccho; sleep 1; done"'.
 }
