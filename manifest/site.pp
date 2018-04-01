@@ -1,10 +1,17 @@
-include dockeragent
-node 'master.puppet.vm' {
-  include role::master_server
+include 'docker'
+
+docker::image { 'ubuntu':
+  image_tag => 'precise'
 }
-node 'web.puppet.vm' { 
-  include role::app_server
+
+docker::run { 'helloworld':
+  image   => 'base',
+  command => '/bin/sh -c "while true; do echo hello world; sleep 1; done"',
 }
-node 'db.puppet.vm' {
-  include role::db_server
+
+docker::exec { 'helloworld-uptime':
+  detach    => true,
+  container => 'helloworld',
+  command   => 'uptime',
+  tty       => true,
 }
