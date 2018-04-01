@@ -14,7 +14,3 @@ docker::run { 'goodbyeworld':
   image  => 'ubuntu',
   command => '/bin/sh -c "while true; do echo go away; sleep 1; done"',
 }
-
-ntp::install { 'ntp':
-  servers => [ 'ntp1.corp.com', 'ntp2.corp.com' ],
-}
