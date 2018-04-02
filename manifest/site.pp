@@ -3,6 +3,7 @@ include 'ntp'
 
 docker::image { 'ubuntu':
   image_tag => 'precise'
+  hostname => 'thisimage.puppet.vm
 }
 
 docker::run { 'helloworld':
